@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<title> Trang chủ</title>
+	<meta charset="utf-8">
+	  
+	<script type="text/javascript" src="<?php echo base_url() ?>vendor/bootstrap.js"></script>
+	<!-- // jquery load -->
+	<script type="text/javascript" src="<?php echo base_url() ?>jqueryupload/js/vendor/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="<?php echo base_url() ?>jqueryupload/js/jquery.fileupload.js"></script>
+
+ 	<script type="text/javascript" src="<?php echo base_url() ?>1.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url() ?>vendor/bootstrap.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>vendor/font-awesome.css">
+ 	<link rel="stylesheet" href="<?php echo base_url() ?>1.css">
+ 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body >
+
+	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Admin</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class=" active nav-item dropdown">
+    	<!-- Quản lý bác sĩ -->
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">
+        Quản lý bác sĩ
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Bác sĩ</a>
+        <a class="dropdown-item" href="#">Cơ sở y tế</a>
+        <a class="dropdown-item" href="#">Khoa</a>
+        <a class="dropdown-item" href="#">Bộ môn</a>
+      </div>
+    </li>
+   <!--  Quản lý bệnh nhân -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop2" data-toggle="dropdown">
+        Quản lý bệnh nhân
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Bệnh nhân</a>
+        <a class="dropdown-item" href="#">Bảo hiểm y tế</a>
+        <a class="dropdown-item" href="#">Bệnh</a>
+        
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+    	<!-- Quản lý bác sĩ -->
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Quản lý thuốc
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Thuốc</a>
+        <a class="dropdown-item" href="#">Lô thuốc</a>
+        <a class="dropdown-item" href="#">Nhà thuốc
+        <a class="dropdown-item" href="#">Thuốc được bán</a>
+        <a class="dropdown-item" href="#">Thuốc trong đơn</a>
+         <a class="dropdown-item" href="#">Đơn thuốc</a>
+         <a class="dropdown-item" href="#">Khuyến mại</a>
+
+      </div>
+    </li>
+  </ul>
+  <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+     <!-- <form class="form-inline " action="/action_page.php">
+    <input class="form-control  mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success  " type="submit">Search</button>
+  </form> -->
+</nav>
+<div class="container">
+  <!-- <h3>Danh sách</h3> -->
+  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+   Thêm mới
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+       <div class="container">
+  <form action="save"  method="post" enctype="multidata/form-data">
+    
+  <fieldset>
+    <legend>Legend</legend>
+    <div class="form-group">
+      <label for="title" class="col-md-2 control-label">Title</label>
+      <div class="col-md-5">
+        <input name="title" type="text"  class="form-control" id="title" placeholder="Title">
+        
+      </div>
+      <div class="col-md-5">
+        
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="des" class="col-md-2 control-label">Mô tả</label>
+       <div class="col-md-5">
+      <textarea name="des" class="form-control" id="des" rows="5" placeholder="Description"></textarea>
+     
+    </div>
+    <div class="col-md-5">
+        
+      </div>
+     </div>
+    
+ <div class="form-group">
+  <div class="col-md-10 col-md-offset-2">
+    
+     <input type="submit" class="btn btn-success " value="Submit">
+     <?php echo anchor('demo2', '<div class="btn btn-info">Back</div>'); ?>
+
+  </div>
+   
+ </div>
+  </fieldset>
+
+
+</form>
+</div>
+        
+      </div>
+    </div>
+  </div>
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Mô tả</th>
+      <th scope="col">Ngày tạo</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php if (count($add)) :?>
+    <?php foreach ($add as $add):{
+      
+    } ?>
+    <tr class="table">
+      <td><?php echo $add->title;?></td>
+      <td><?php echo $add->des;?></td>
+      <td><?php echo $add->date_cre;?></td>
+      <td >
+
+        <?php echo anchor("demo2/view/$add->id", '<button class="btn btn-info ">View</button>') ?>
+        <?php echo anchor("demo2/editSim/$add->id", '<button class="btn btn-success ">Sửa</button>') ?>
+        <?php echo anchor("demo2/delete/$add->id", '<button class="btn btn-danger ">Xóa</button>') ?>
+      </td>
+    </tr>
+    
+<?php endforeach; ?>
+    <?php else: ?>
+    <tr>
+      <td>No records Found</td>
+    </tr>
+    <?php endif; ?>
+  </tbody>
+</table> 
+ </div>
+
+</body>
+</html>
