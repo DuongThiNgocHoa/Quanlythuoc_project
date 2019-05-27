@@ -55,6 +55,7 @@ class sale_model extends CI_Model {
 
 // 	}
 
+
 }
 
 /* End of file sale_model.php */

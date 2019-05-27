@@ -11,8 +11,10 @@ class sale extends CI_Controller {
 	{
 		$this->load->model('sale_model');
 		$posts = $this->sale_model->getPosts();
+		
         $posts= array('add'=>$posts);
 		$this->load->view('sale_view', $posts);
+		
 		
 	}
 	public function delete($ma_km)

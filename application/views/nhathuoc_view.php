@@ -15,42 +15,56 @@
       <div class="modal-content">
       
        <div class="container">
-  <form action="save"  method="post" enctype="multidata/form-data">
+  <form action="save/"  method="post" enctype="multidata/form-data">
     
   <fieldset>
     <legend>Thêm thông tin nhà thuốc</legend>
+    
+      
+    
     <div class="form-group">
-      <label for="so_the_bhyt" class="col-md-2 control-label">Số thẻ BHYT</label>
+
+                <label for="ma_nha_thuoc" class="  control-label">Mã nhà thuốc</label>
+                   <div class="col-md-8">
+                <select name="ma_nha_thuoc" id="ma_nha_thuoc" class="form-control">
+                     <?php foreach ($string as $value): ?>
+                       
+                    
+                  <option type="text" <?= $value ?>><?= $value ?></option>
+                
+                  
+                </div> 
+                 <?php endforeach ?>
+                  </select>
+                <!-- <div class="col-md-8">
+                  
+                </div> -->
+                </div>
+              </div>
+   
+    <div class="form-group">
+      <label for="ten_nha_thuoc" class=" control-label">Tên nhà thuốc</label>
       <div class="col-md-8">
-        <input name="so_the_bhyt" type="text"  class="form-control" id="so_the_bhyt" placeholder="Số thẻ">
+        <input name="ten_nha_thuoc" type="text"  class="form-control" id="ten_nha_thuoc" placeholder="Tên nhà thuốc">
         
       </div>
       <div class="col-md-8">
       </div>
     </div>
     <div class="form-group">
-      <label for="ngay_bat_dau" class="col-md-2 control-label">Ngày bắt đầu</label>
+      <label for="dia_chi_nt" class="col-md-2 control-label">Địa chỉ</label>
       <div class="col-md-8">
-        <input name="ngay_bat_dau" type="date"  class="form-control" id="ngay_bat_dau" placeholder="">
+        <input name="dia_chi_nt" type="text"  class="form-control" id="dia_chi_nt" placeholder="Địa chỉ">
         
       </div>
       <div class="col-md-8">
       </div>
     </div>
     <div class="form-group">
-      <label for="ngay_ket_thuc" class="col-md-2 control-label">Ngày kết thúc</label>
+      <label for="ma_thuoc" class="col-md-2 control-label">Thuốc</label>
       <div class="col-md-8">
-        <input name="ngay_ket_thuc" type="date"  class="form-control" id="ngay_ket_thuc" placeholder="">
-        
-      </div>
-      <div class="col-md-8">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="pham_tram" class="col-md-2 control-label">Phần trăm</label>
-      <div class="col-md-8">
-        <input name="pham_tram" type="number"  class="form-control" id="pham_tram" placeholder="">
-        
+        <textarea name="ma_thuoc" type="text"  class="form-control" id="ma_thuoc" rows="5" placeholder="Thuốc">
+        </textarea>
       </div>
       <div class="col-md-8">
       </div>
@@ -84,26 +98,29 @@
   <thead class="thead-light">
     <tr>
      <!--  <th scope="col">STT</th> -->
+      <th scope="col">STT</th>
       <th scope="col">Mã nhà thuốc</th>
       <th scope="col">Tên nhà thuốc</th>
       <th scope="col">Địa chỉ </th>
-      <th scope="col">Vị trí</th>
+       <th scope="col">Mã thuốc </th>
+      
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody id="myTable">
-   <!-- <?php if (count($add)) :?>
+    <?php if (count($add)) :?>
     <?php foreach ($add as $add):{
       
-    } ?>  -->
+    } ?> 
     <tr class="table">
-      <td> <?php echo $add->so_the_bhyt;?> </td>
-      <td> <?php echo $add->ngay_bat_dau;?> </td>
-      <td> <?php echo $add->ngay_ket_thuc;?> </td>
-      <td> <?php echo $add->phan_tram;?></td>
+      <td> <?php echo $add->id_nhathuoc;?> </td>
+      <td> <?php echo $add->ma_nha_thuoc;?> </td>
+      <td> <?php echo $add->ten_nha_thuoc;?> </td>
+      <td> <?php echo $add->dia_chi_nt;?></td>
+        <td> <?php echo $add->ma_thuoc;?></td>
       <td >
-        <?php echo anchor("bhyt/editSim/", '<button class="btn btn-success ">Sửa</button>') ?>
-        <?php echo anchor("bhyt/delete/", '<button class="btn btn-danger ">Xóa</button>') ?>
+        <?php echo anchor("nhathuoc/editSim/$add->id_nhathuoc/", '<button class="btn btn-success ">Sửa</button>') ?>
+        <?php echo anchor("nhathuoc/delete/$add->id_nhathuoc/", '<button class="btn btn-danger ">Xóa</button>') ?>
       </td>
     </tr>
     

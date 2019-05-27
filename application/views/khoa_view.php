@@ -41,19 +41,32 @@
 
                 <label for="formGroupExampleInput" class=" col-md-2 control-label">Bộ môn</label>
                    <div class="col-md-8">
-                <select name="ten_bo_mon" id="" class="form-control">
-                     <?php foreach ($dl as $dulieu): ?>
-                       
+                <select  class="chosen">
+                     <!-- <?php foreach ($dl as $dulieu): ?>
+                        -->
                     
-                  <option type="text"><?= $dulieu['ten_bo_mon'] ?></option>
+                 <!--  <option ><?= $dulieu['ten_bo_mon'] ?></option> -->
+                 <option>1</option>
+                 <option>2</option>
+                 <option>3</option>
+                 <option>4</option>
+
+                 <option>5</option>
+                 <option>6</option>
+                 <option>8</option>
+                 <option>7</option>
+
                 
                   
-                </div> -->
-                 <?php endforeach ?>
+            
+                 <!-- <?php endforeach ?> -->
                   </select>
                 <!-- <div class="col-md-8">
                   
                 </div> -->
+                <script type="text/javascript">
+               $(". chosen").chosen();
+              </script>
                 </div>
               </div>
               <div class="form-group">
@@ -136,9 +149,11 @@ $(document).ready(function(){
     var value = $(this).val().toLowerCase();
     $("#myTable tr").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      
+  } );
     });
   });
 });
-</script>
+
              <!--  end Jquery Seach
  -->

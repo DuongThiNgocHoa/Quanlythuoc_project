@@ -1,4 +1,5 @@
 <?php include_once('header_view.php'); ?>
+
  <div class="container bg-view">
   <br>
   <h3 class="text-center">Thông tin bác sĩ</h3>
@@ -12,123 +13,130 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
        <div class="container">
-  <form action="save/"  method="post" enctype="multipart/form-data"> 
-  <fieldset>
-    <legend>Thêm thông tin bác sĩ </legend>
-    <div class="form-group ">
-              <label for="ma_bac_si" class="col-sm-4 form-control-label  ">Mã bác sĩ</label>
-              <div class="col-sm-8">
-                <input name="ma_bac_si" type="text" class="form-control" id="ma_bac_si" placeholder="Mã bác sĩ">
-              </div>
-              <div class="col-sm-8">
-          	</div>
-          </div>
-              <div class="form-group">
-      <label for="ten_bs" class="col-md-2 control-label">Tên bác sĩ</label>
-       <div class="col-md-8">
-      <input type="text"  name="ten_bs" class="form-control"  placeholder="Tên bác sĩ">
-     
-    </div>
-    <div class="col-md-8">
-        
-      </div>
-     </div>
-         <div class="form-group ">   
            
-                <label for="anh_bs" class="col-sm-4 form-control-label ">Ảnh
-                </label>
-                <div class="col-sm-8">
-                  <input name="anh_bs" type="file" class="form-control" id="anh_bs" placeholder="Ảnh ">
-                </div>
-				 <div class="col-sm-8">
-          	</div>
-          </div>
-               
-    <div class="form-group">
-      <label for="sdt_bs" class="col-md-2 control-label">Số điện thoại</label>
-       <div class="col-md-8">
-      <input type="text"  name="sdt_bs" class="form-control" id="sdt_bs"  placeholder="Số điện thoại">
-     
-    </div>
-    <div class="col-md-8">
-        
-      </div>
-     </div>
-     
-      <div class="form-group">
-      <label for="email" class="col-md-2 control-label">Email</label>
-       <div class="col-md-8">
-      <input type="email"  name="email" class="form-control" id="email"  placeholder="Email">
-     
-    </div>
-    <div class="col-md-8">
-        
-      </div>
-     </div>
-     
-      <div class="form-group row">
-      	<div class="col-md-6">
-      		<div class="rows">
-      			<label for="ngay_bdct" class=" control-label">Ngày bắt đầu công tác</label>
-       			<div class="col-md-8">
-     				 <input type="date"  name="ngay_bdct" class="form-control" id="ngay_bdct"  placeholder="Ngày bắt đầu">
-     
-    			</div>
-    		</div>
-    	</div>
-            <div class="col-md-6">
-            	<div class="rows">
-            		<label for="ngay_ktct" class=" control-label">Ngày kết thúc công tác</label>
-					<div class="col-md-8">
-					<input type="date"  name="ngay_ktct" class="form-control" id="ngay_ktct"  placeholder="Ngày kết thúc">
-        		
-      				</div>
-     			</div>
-     		 </div>
-     	</div>
 
-    
-      <div class="form-group">
-      <label for="chuyen_nganh" class="col-md-2 control-label">Chuyên ngành</label>
-       <div class="col-md-8">
-      <input type="text"  name="chuyen_nganh" class="form-control" id="chuyen_nganh"  placeholder="Chuyên ngành">
-     
-    </div>
-    <div class="col-md-8">
-        
-      </div>
-     </div>
-     <div class="form-group">
-      <label for="ma_csyt" class="col-md-2 control-label">Mã CSYT</label>
-       <div class="col-md-8">
-      <input type="text"  name="ma_csyt" class="form-control" id="ma_csyt"  placeholder="Mã CSYT">
-     
-    </div>
-    <div class="col-md-8">
-        
-      </div>
-     </div>
-    
-   
-    
- <div class="form-group">
-  <div class="col-md-10 col-md-offset-2">
-    
-     <input type="submit" class="btn btn-success " name="btnadd" value="Submit">
-     <?php echo anchor('bacsi/', '<div class="btn btn-info">Back</div>'); ?>
+                    <form class="form-horizontal"  action="save/"  method="post" enctype="multipart/form-data"> 
+                    <fieldset>
+                      <div class="modal-header ">
+                          <h4 align="center">Thêm thông tin bác sĩ </h4>
+                      </div>
+                        <div class="modal-body">
+                         <div class="form-group ">
+                                <label for="ma_bac_si"  ">Mã bác sĩ</label>
+                                <div class="col-sm-4">
+                                  <input name="ma_bac_si" type="text" class="form-control" id="ma_bac_si" placeholder="Mã bác sĩ">
+                                </div>
+                                <div class="col-sm-4">
+                              </div>
+                            </div>
+                                <div class="form-group">
+                        <label for="ten_bs" class="col-md-2 control-label">Tên bác sĩ</label>
+                         <div class="col-md-4">
+                        <input type="text"  name="ten_bs" class="form-control"  placeholder="Tên bác sĩ">
+                       
+                      </div>
+                      <div class="col-md-4">
+                          
+                        </div>
+                       </div>
+                           <div class="form-group ">   
+                             
+                                  <label for="anh_bs" class="col-sm-4 form-control-label ">Ảnh
+                                  </label>
+                                  <div class="col-sm-8">
+                                    <input name="anh_bs" type="file" class="form-control" id="anh_bs" placeholder="Ảnh ">
+                                  </div>
+                           <div class="col-sm-8">
+                              </div>
+                            </div>
+                                 
+                      <div class="form-group">
+                        <label for="sdt_bs" class="col-md-2 control-label">Số điện thoại</label>
+                         <div class="col-md-8">
+                        <input type="text"  name="sdt_bs" class="form-control" id="sdt_bs"  placeholder="Số điện thoại">
+                       
+                      </div>
+                      <div class="col-md-8">
+                          
+                        </div>
+                       </div>
+                       
+                        <div class="form-group">
+                        <label for="email" class="col-md-2 control-label">Email</label>
+                         <div class="col-md-8">
+                        <input type="email"  name="email" class="form-control" id="email"  placeholder="Email">
+                       
+                      </div>
+                      <div class="col-md-8">
+                          
+                        </div>
+                       </div>
+                       
+                        <div class="form-group row">
+                          <div class="col-md-6">
+                            <div class="rows">
+                              <label for="ngay_bdct" class=" control-label">Ngày bắt đầu công tác</label>
+                              <div class="col-md-8">
+                               <input type="date"  name="ngay_bdct" class="form-control" id="ngay_bdct"  placeholder="Ngày bắt đầu">
+                       
+                            </div>
+                          </div>
+                        </div>
+                              <div class="col-md-6">
+                                <div class="rows">
+                                  <label for="ngay_ktct" class=" control-label">Ngày kết thúc công tác</label>
+                            <div class="col-md-8">
+                            <input type="date"  name="ngay_ktct" class="form-control" id="ngay_ktct"  placeholder="Ngày kết thúc">
+                              
+                                </div>
+                            </div>
+                           </div>
+                        </div>
 
-  </div>
-   
- </div>
-  </fieldset>
+                      
+                        <div class="form-group">
+                        <label for="chuyen_nganh" class=" control-label">Chuyên ngành</label>
+                         <div class="col-md-8">
+                        <input type="text"  name="chuyen_nganh" class="form-control" id="chuyen_nganh"  placeholder="Chuyên ngành">
+                       
+                      </div>
+                      <div class="col-md-8">
+                          
+                        </div>
+                       </div>
+                       <div class="form-group">
+                        <label for="ma_csyt" class="col-md-2 control-label">Mã CSYT</label>
+                         <div class="col-md-8">
+                        <input type="text"  name="ma_csyt" class="form-control" id="ma_csyt"  placeholder="Mã CSYT">
+                       
+                      </div>
+                      <div class="col-md-8">
+                          
+                        </div>
+                       </div>
+                      
+                     
+                      
+                   <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                      
+                       <input type="submit" class="btn btn-success " name="btnadd" value="Submit">
+                       <?php echo anchor('bacsi/', '<div class="btn btn-info">Back</div>'); ?>
 
+                    </div>
+                     
+                   </div>
+                 </div>
+                    </fieldset>
+                  
 
-</form>
+                  </form>
 </div>
         
       </div>
     </div>
   </div>
+
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
   <div class="table-responsive table-responsive-sm" >
@@ -183,6 +191,7 @@
       
     </table>
   </div>
+
 
 
 <!--   Jquery Seach -->

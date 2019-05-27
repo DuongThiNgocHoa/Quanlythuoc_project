@@ -17,7 +17,7 @@
               
             <fieldset>
               <legend>Thêm thông tin bộ môn</legend>
-              <div class="form-group">
+             <!--  <div class="form-group">
                 <label for="ma_bo_mon" class="col-md-2 control-label">Mã bộ môn</label>
                 <div class="col-md-8">
                   <input name="ma_bo_mon" type="text"  class="form-control" id="ma_bo_mon" placeholder="Mã bộ môn">
@@ -26,7 +26,7 @@
                 <div class="col-md-8">
                   
                 </div>
-              </div>
+              </div> -->
                <div class="form-group">
                 <label for="ten_bo_mon" class="col-md-2 control-label">Tên bộ môn</label>
                 <div class="col-md-8">
@@ -89,8 +89,8 @@
       <td><?php echo $add->ten_bo_mon;?></td>
       <td><?php echo $add->noi_dung_dieu_tri;?></td>
       <td >
-        <?php echo anchor("bomon/editSim/$add->ma_bo_mon", '<button class="btn btn-success ">Sửa</button>') ?>  
-        <?php echo anchor("bomon/delete/$add->ma_bo_mon", '<button class="btn btn-danger ">Xóa</button>') ?>
+        <?php echo anchor("bomon/editSim/", '<button class="btn btn-success ">Sửa</button>') ?>  
+        <?php echo anchor("bomon/delete/", '<button class="btn btn-danger ">Xóa</button>') ?>
       </td>
     </tr>
     
